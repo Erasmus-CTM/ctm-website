@@ -1,0 +1,273 @@
+/* Shared rules of the CTM sites (ctm-website and ctm-report use the same file).
+   Look modelled on the existing CTM site at DTU (Sphinx Book Theme): logo and
+   search on top of a docked sidebar on the left, no top bar, contents on the right.
+   Colours are in Theme/ctm-light.scss and Theme/ctm-dark.scss.
+
+   Taken over from Erasmus-CTM/Quarto-Tutorial (and the CTM math tutorials): the
+   idea of growing with the screen on large monitors and the overflow rules for
+   tables/formulas. */
+
+
+/* --- Logo: dark variant in dark mode -------------------------------------------
+   The logo has black lettering. In dark mode the <img> shows the copy with light
+   lettering instead (CSS "content" on an img replaces the picture). */
+body.quarto-dark .sidebar-logo {
+    content: url("Theme/ctm-logo-dark.png");
+}
+.sidebar-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 4.5rem;
+}
+.sidebar-header .sidebar-logo-link {
+    display: block;
+    padding: 0.4rem 0 0.6rem;
+}
+
+
+/* --- Sidebar like DTU ------------------------------------------------------------
+   Thin line between sidebar and page, section headings bold, current page in the
+   accent colour with a bar on the left. */
+#quarto-sidebar.docked,
+.sidebar.docked {
+    border-right: 1px solid var(--ctm-line);
+}
+.sidebar-item-section > .sidebar-item-container .sidebar-item-text {
+    font-weight: 600;
+}
+#quarto-sidebar .sidebar-link.active {
+    font-weight: 600;
+    color: var(--ctm-accent);
+    box-shadow: inset 2px 0 0 var(--ctm-accent);
+    padding-left: 0.5rem;
+}
+#quarto-sidebar .sidebar-link {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+}
+#TOC a.nav-link.active {
+    color: var(--ctm-accent);
+    font-weight: 600;
+}
+main h1.title {
+    font-size: 2.3rem;
+}
+main h2 {
+    margin-top: 2.2rem;
+    border-bottom: none;
+}
+
+
+/* --- Tables and formulas ----------------------------------------------------------
+   Compact tables (Quarto class .sm): slightly smaller font. Tables, formulas and
+   code that are too wide scroll inside their own box instead of making the whole
+   page scroll sideways (mostly on phones). */
+main table.table-sm {
+    font-size: 0.9em;
+}
+/* Only on small screens: a too-wide table scrolls in its own box. On desktop tables
+   stay real tables at full width, so the column widths (tbl-colwidths) work. */
+@media (max-width: 767.98px) {
+  main table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* Clearer tables: tinted header, more space, light lines between rows. */
+main table.table {
+    border: 1px solid var(--ctm-line);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1rem 0 1.5rem;
+}
+main table.table > thead > tr > th {
+    background: color-mix(in srgb, var(--ctm-accent) 9%, transparent);
+    border-bottom: 1px solid var(--ctm-line);
+    font-weight: 600;
+    vertical-align: bottom;
+}
+main table.table > :not(caption) > * > * {
+    padding: 0.5rem 0.65rem;
+    vertical-align: top;
+}
+main table.table > tbody > tr > td {
+    border-bottom: 1px solid var(--ctm-line);
+}
+main table.table > tbody > tr:last-child > td {
+    border-bottom: none;
+}
+main table.table > tbody > tr:hover > td {
+    background: color-mix(in srgb, var(--ctm-accent) 4%, transparent);
+}
+
+/* Status markers in tables: [Done]{.ctm-status .done}, .planned, .open */
+.ctm-status {
+    display: inline-block;
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.85em;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+.ctm-status.done {
+    color: #1e7a3c;
+    background: color-mix(in srgb, #2e9e52 14%, transparent);
+}
+.ctm-status.planned {
+    color: var(--ctm-accent);
+    background: color-mix(in srgb, var(--ctm-accent) 13%, transparent);
+}
+.ctm-status.open {
+    color: var(--ctm-muted);
+    border-color: var(--ctm-line);
+}
+body.quarto-dark .ctm-status.done {
+    color: #6fd08f;
+}
+
+/* Separator between sections (--- in the .qmd) */
+main hr {
+    margin: 2.8rem 0 0.5rem;
+    border: 0;
+    border-top: 2px solid var(--ctm-line);
+    opacity: 1;
+}
+/* listing tables (project pool, events) are full width and sort themselves */
+main .quarto-listing-table table,
+main table.quarto-listing-table {
+    display: table;
+    width: 100%;
+}
+main .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+}
+main div.sourceCode {
+    overflow-x: auto;
+}
+
+
+/* --- Layout on desktop: sidebar + text + contents use about 75% of the width -------
+   Sidebar style is "floating" (_quarto.yml): sidebar, text and contents form one block
+   in the middle of the window. Quarto's own floating grid caps the text at 800px and
+   leaves big empty margins (5fr) on wide screens. Here the block is 75% of the window
+   (margins 12.5% each side), but never narrower than 72rem as long as the window
+   allows (on small laptops the margins shrink first). Sidebar and contents have fixed
+   widths in rem, the text column takes the rest.
+   Widths are rem or %, never px: from 1700px the font grows (next block) and the
+   whole block grows with it. Below 992px Quarto's own mobile layout applies. */
+@media (min-width: 992px) {
+  :root {
+    --ctm-margin: max(0px, min(12.5%, calc((100% - 72rem) / 2)));
+  }
+  /* pages with contents on the right (and listing pages with categories) */
+  body.floating .page-columns,
+  body.floating.slimcontent .page-columns,
+  body.floating.listing .page-columns {
+    grid-template-columns: [screen-start] 1.5em [screen-start-inset] var(--ctm-margin) [page-start page-start-inset] 15rem [body-start-outset] 2rem [body-start] 1.5em [body-content-start] minmax(0, 1fr) [body-content-end] 1.5em [body-end] 2rem [body-end-outset] 13rem [page-end-inset page-end] var(--ctm-margin) [screen-end-inset] 1.5em [screen-end];
+  }
+  /* pages without contents on the right (toc: false) */
+  body.floating.fullcontent .page-columns {
+    grid-template-columns: [screen-start] 1.5em [screen-start-inset] var(--ctm-margin) [page-start page-start-inset] 15rem [body-start-outset] 2rem [body-start] 1.5em [body-content-start] minmax(0, 1fr) [body-content-end] 1.5em [body-end body-end-outset page-end-inset page-end] var(--ctm-margin) [screen-end-inset] 1.5em [screen-end];
+  }
+}
+
+
+/* --- Large screens: everything grows ----------------------------------------------
+   Same idea as in Quarto-Tutorial and the CTM math tutorials: from 1700px on the
+   base font grows with the window width (16px at 1700px, about 24px at 2560px, at
+   most 28px). Because sidebar, text column and contents column above are all given
+   in rem, they grow with it - the page looks the same, just bigger.
+   (Quarto-Tutorial has to convert Quarto's px grids to rem for this; here the grid
+   above is already in rem.) */
+@media (min-width: 1700px) {
+  :root {
+    --bs-root-font-size: clamp(16px, calc(100vw / 106.25), 28px);
+  }
+}
+
+
+/* --- Start page: entry tiles and key figures --------------------------------------- */
+.ctm-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.ctm-tile {
+    display: block;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--ctm-line);
+    border-top: 3px solid var(--ctm-accent);
+    border-radius: 6px;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.ctm-tile:hover {
+    border-color: var(--ctm-accent);
+}
+.ctm-tile strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 0.3rem;
+    color: var(--ctm-accent);
+}
+.ctm-tile span {
+    display: block;
+    font-size: 0.92em;
+    color: var(--ctm-muted);
+}
+.ctm-figures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    margin: 1rem 0 1.5rem;
+}
+.ctm-figures div {
+    min-width: 7rem;
+    color: var(--ctm-muted);
+}
+.ctm-figures b {
+    display: block;
+    font-size: 1.8em;
+    line-height: 1.1;
+    color: var(--ctm-accent);
+}
+
+/* --- Footer: EU logo + disclaimer ---------------------------------------------------
+   The EU logo has blue lettering; on the dark theme it sits on a white plate (the EU
+   rules allow the logo on a white background). The disclaimer is long, so it is small. */
+.nav-footer {
+    align-items: center;
+}
+.nav-footer-center {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    max-width: 38rem;
+}
+.nav-footer-left,
+.nav-footer-right {
+    font-size: 0.8rem;
+}
+.ctm-eu-logo {
+    height: 2.6rem;
+    width: auto;
+}
+body.quarto-dark .ctm-eu-logo {
+    background: #ffffff;
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
+}
+
+/* Small grey note "to be confirmed" for content not yet checked with the partners */
+.tbc {
+    font-size: 0.85em;
+    color: var(--ctm-muted);
+    font-style: italic;
+}

@@ -1,0 +1,53 @@
+---
+title: "Project Pool"
+subtitle: "Group projects that use mathematics in real applications"
+toc: false
+listing:
+  id: pool
+  contents: projects.yml
+  type: table
+  fields: [title, subject, topic, workload, languages, university]
+  field-display-names:
+    title: "Project"
+    subject: "Subject"
+    topic: "Topic"
+    workload: "Workload"
+    languages: "Languages"
+    university: "From"
+  sort-ui: [title, subject, topic, university]
+  filter-ui: [title, subject, topic, languages, university]
+  categories: true
+  sort: [subject, topic, title]
+  page-size: 100
+---
+
+Each project takes a problem from engineering, science or economics as its starting
+point and solves it with the mathematics of the first year: calculus and linear
+algebra, supported by Python. The projects are made for groups of students; the
+expected workload is given for each project.
+
+Click a project to open its folder with the task sheet and all files. Use the search
+box or the categories on the right to filter.
+
+::: {#pool}
+:::
+
+### Add your projects
+
+The pool is built from the repository
+[Erasmus-CTM/thematicProjects](https://github.com/Erasmus-CTM/thematicProjects):
+the script `tools/update_projects.py` in the repository of this website reads the
+README of every project and creates the table above. New projects appear here with
+the next update of this website.
+Each project is a folder `Subject/Topic/Project/` with a `README.md` that starts like this:
+
+```markdown
+# Road planning
+
+* **Workload:** 4-6 hours
+* **Study programme:** Civil engineering; Land surveying
+* **Prerequisites:** Planar curves; curvature
+* **Languages:** Danish
+* **University:** AAU
+* **Authors:** Jane Doe; John Doe
+```

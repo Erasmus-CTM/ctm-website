@@ -1,0 +1,32 @@
+/*-- scss:defaults --*/
+
+// Dark theme of the CTM sites (counterpart: ctm-light.scss, shared rules in
+// styles.css). Colours close to the dark mode of the CTM site at DTU.
+// The logo has black lettering, so styles.css swaps in Theme/ctm-logo-dark.png.
+
+$ctm-blue: #4ea3dc;          // logo blue, lightened for contrast on dark grey
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$body-bg: #14181e;
+$body-color: #ced6dd;
+$primary: $ctm-blue;
+$link-color: $ctm-blue;
+$headings-font-weight: 600;
+$headings-color: #e8edf2;
+
+$sidebar-bg: #14181e;
+$sidebar-fg: #b4bec8;
+$sidebar-hl: $ctm-blue;
+$footer-bg: #14181e;
+$code-color: #e78ad6;
+$code-block-bg: #1d232b;
+
+$mermaid-edge-color: #9aa6b2;
+
+
+/*-- scss:rules --*/
+:root {
+  --ctm-accent: #{$ctm-blue};
+  --ctm-line: #2c333d;
+  --ctm-muted: #9aa6b2;
+}

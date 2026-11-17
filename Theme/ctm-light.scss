@@ -1,0 +1,33 @@
+/*-- scss:defaults --*/
+
+// Light theme of the CTM sites (counterpart: ctm-dark.scss, shared rules in
+// styles.css). Modelled on the existing CTM site at DTU (Sphinx Book Theme):
+// white page, system font, docked sidebar, accent = blue of the CTM logo.
+
+$ctm-blue: #056ca7;          // sampled from the logo (Theme/ctm-icon.png)
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$body-bg: #ffffff;
+$body-color: #222832;
+$primary: $ctm-blue;
+$link-color: $ctm-blue;
+$headings-font-weight: 600;
+$headings-color: #222832;
+
+// docked sidebar like DTU: same white as the page, thin line on the right
+$sidebar-bg: #ffffff;
+$sidebar-fg: #3b4350;
+$sidebar-hl: $ctm-blue;
+$footer-bg: #ffffff;
+$code-color: #912583;
+
+// readable mermaid edges on white
+$mermaid-edge-color: #4a5560;
+
+
+/*-- scss:rules --*/
+:root {
+  --ctm-accent: #{$ctm-blue};
+  --ctm-line: #dfe3e8;
+  --ctm-muted: #5a6370;
+}

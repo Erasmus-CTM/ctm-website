@@ -1,0 +1,72 @@
+# CTM website (part 1 of 2): the PUBLIC results of the Erasmus+ project.
+# Look: like the existing CTM site at DTU (logo + docked sidebar), see styles.css.
+# Structure and background: see ../CLAUDE.md and ../Notizen/.
+#
+#   quarto preview          # local preview with live reload
+#   quarto render           # -> _site/
+#
+# The project pool is the generated file projects/projects.yml
+# (python -I tools/update_projects.py), rendering needs no network.
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - Theme/*.png          # dark logo is only referenced from styles.css
+
+website:
+  title: "CTM – Computational Thinking makes sense of Mathematics"
+  description: "Open teaching materials, project collections and software from the Erasmus+ project CTM."
+  favicon: Theme/ctm-icon.png
+  page-navigation: true
+  # No navbar: everything is in the docked sidebar, as on the DTU site.
+  sidebar:
+    style: floating
+    logo: Theme/ctm-logo.png
+    logo-alt: "CTM – Computational Thinking in Mathematics, home"
+    title: false
+    search: true
+    tools:
+      - icon: github
+        href: "https://github.com/Erasmus-CTM"
+        aria-label: "GitHub"
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Results"
+        contents:
+          - text: "Project Pool"
+            href: projects/index.qmd
+          - text: "Course Materials"
+            href: materials.qmd
+          - text: "Software"
+            href: software.qmd
+      - section: "About"
+        contents:
+          - text: "About the project"
+            href: about.qmd
+  # EU logo: official "Co-funded by the European Union" SVG, taken from
+  # Erasmus-CTM/thematicProjects (aux/footerEN.html). Disclaimer: the standard
+  # Erasmus+ wording (to be confirmed by the coordinator).
+  page-footer:
+    left: |
+      ![](/Theme/eu-cofunded.svg){.ctm-eu-logo fig-alt="Co-funded by the European Union"}
+    center: |
+      Funded by the European Union. Views and opinions expressed are however those of
+      the author(s) only and do not necessarily reflect those of the European Union or
+      the European Education and Culture Executive Agency (EACEA). Neither the European
+      Union nor EACEA can be held responsible for them.
+    right: |
+      Erasmus+ project 2023-1-NO01-KA220-HED-000166744 ·
+      Licences: see each repository
+
+format:
+  html:
+    theme:
+      light: [default, Theme/ctm-light.scss]
+      dark:  [default, Theme/ctm-dark.scss]
+    respect-user-color-scheme: true
+    toc: true
+    toc-title: "Contents"
+    css: styles.css
+
+lang: en

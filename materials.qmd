@@ -1,0 +1,44 @@
+---
+title: "Course Materials"
+subtitle: "Open books, courses and tutorials"
+---
+
+All materials are websites you can read right away. The sources are on GitHub, so
+you can copy and adapt them for your own course.
+
+## Linear Algebra and Numerical Methods
+
+A Quarto book on linear algebra with numerical methods in Python.
+
+[Open the book](https://erasmus-ctm.github.io/linalg-project/){.btn .btn-primary}
+[Source](https://github.com/Erasmus-CTM/linalg-project){.btn .btn-outline-secondary}
+
+## Python Crash Course
+
+A short introduction to Python for mathematics students, made at Lund University and
+based on Jan-Fredrik Olsen's lecture notes *"Don't panic"*.
+
+[Open the course](https://erasmus-ctm.github.io/crashcourse_python/){.btn .btn-primary}
+[Source](https://github.com/Erasmus-CTM/crashcourse_python){.btn .btn-outline-secondary}
+
+## Quarto Tutorial
+
+How to write your own interactive teaching material with Quarto: websites, exercise
+sheets, books and Python that runs in the browser. Three levels (example page,
+getting started, tips & tricks) in five languages (German, English, Swedish,
+Norwegian, Danish).
+
+[Open the tutorial](https://erasmus-ctm.github.io/Quarto-Tutorial/en/){.btn .btn-primary}
+[Source](https://github.com/Erasmus-CTM/Quarto-Tutorial){.btn .btn-outline-secondary}
+
+## Workshop materials
+
+Hands-on material from the project's workshops, ready to reuse.
+
+| Workshop | Content |
+|---|---|
+| [Creating Python-based tutorials with Quarto](https://github.com/Erasmus-CTM/workshop-python-tutorials-2025) (Bochum, 2025) | Setup, first `.qmd` documents, Python cells running in the browser |
+| [AI feedback in learning management systems](https://github.com/Erasmus-CTM/workshop-ai-2025) (Bochum, 2025) | Example configurations for an AI math tutor |
+| [Quarto workshop](https://github.com/Erasmus-CTM/workshop-quarto-2026) (Lund, 2026) | Multilingual websites, one source for many output formats, presentations |
+
+: {.sm}

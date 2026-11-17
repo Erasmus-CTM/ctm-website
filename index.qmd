@@ -1,0 +1,52 @@
+---
+title: "Computational Thinking makes sense of Mathematics"
+subtitle: "Open materials for teaching university mathematics with programming"
+toc: false
+---
+
+CTM is an Erasmus+ partnership of six European universities (2024–2026). Together
+they bring computational thinking and Python programming into first-year university
+mathematics. Everything the project produced is openly available. This page
+collects it in one place.
+
+::: {.ctm-figures}
+<div><b>6</b>partner universities</div>
+<div><b>50+</b>projects in the pool</div>
+<div><b>3</b>open courses + workshops</div>
+<div><b>10</b>software repositories</div>
+:::
+
+<!-- Raw HTML so that pandoc does not wrap the three links into one <p>
+     (the grid in styles.css needs them as direct children). -->
+```{=html}
+<div class="ctm-tiles">
+<a class="ctm-tile" href="projects/index.html">
+<strong>Project Pool</strong>
+<span>Short group projects that start from a real application: bridges, wind turbines,
+circuits, tomography. Filter by subject, topic, workload and language.</span>
+</a>
+<a class="ctm-tile" href="materials.html">
+<strong>Course Materials</strong>
+<span>Open books, crash courses and tutorials, many with Python you can run directly
+in the browser.</span>
+</a>
+<a class="ctm-tile" href="software.html">
+<strong>Software</strong>
+<span>Quarto extensions for interactive exercises with automatic checking and optional
+AI feedback. No server needed.</span>
+</a>
+</div>
+```
+
+## Who we are
+
+| Institution | Country |
+|---|---|
+| Norwegian University of Science and Technology (NTNU), coordinator | Norway |
+| Lund University (LU) | Sweden |
+| Aalborg University (AAU) | Denmark |
+| Technical University of Denmark (DTU) | Denmark |
+| University of Oslo (UiO) | Norway |
+| Ruhr University Bochum (RUB) | Germany |
+
+More on the project, its aims and its funding: [About](about.qmd).

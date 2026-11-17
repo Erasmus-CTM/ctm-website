@@ -1,0 +1,60 @@
+---
+title: "Software"
+subtitle: "Interactive exercises for Quarto, running entirely in the browser"
+---
+
+The project's software turns ordinary [Quarto](https://quarto.org) course notes into
+pages where students can practise. Python runs in the browser via
+[Pyodide](https://pyodide.org) (WebAssembly): no server, no installation for students,
+and no student data leaves the browser. AI feedback is optional.
+
+All packages are open source (AGPL-3.0).
+
+## For teachers: CTM Assessment
+
+**[CTM Assessment](https://github.com/Erasmus-CTM/ctm-assessment)** is the package
+you install. It brings writing, mathematics, Python and interactive diagrams together
+on one page. Students try an idea, check their work and can ask for a hint.
+
+[Try the examples](https://erasmus-ctm.github.io/ctm-assessment/example.html){.btn .btn-primary}
+[Source and guide](https://github.com/Erasmus-CTM/ctm-assessment){.btn .btn-outline-secondary}
+
+It contains these exercise types:
+
+| Component | What students do | Try it |
+|---|---|---|
+| [math-exercise](https://github.com/Erasmus-CTM/math-exercise) | Enter a number, an expression, a vector or a matrix, or construct something on a diagram. Answers are checked symbolically (SymPy): equivalent, exact form, tolerance, sets. | [Examples](https://erasmus-ctm.github.io/math-exercise/) |
+| [py-exercise](https://github.com/Erasmus-CTM/py-exercise) | Finish a small Python function and press *Check*. Hidden tests show what passes. | [Examples](https://erasmus-ctm.github.io/py-exercise/example.html) |
+| [ctm-stack](https://github.com/Erasmus-CTM/ctm-stack) | Answer existing Moodle STACK questions on a Quarto page, graded in the browser. | [Examples](https://erasmus-ctm.github.io/ctm-stack/) |
+
+: {.sm}
+
+## Interactive Python cells: pyodide-interaktiv
+
+**[pyodide-interaktiv](https://github.com/Erasmus-CTM/pyodide-interaktiv)** adds
+editable Python cells to any Quarto page. Code runs in the background (Web Worker),
+so the page stays responsive, and every cell can be stopped. Each cell can have an
+AI feedback button. Without an API key it creates a ready-to-paste prompt instead.
+
+```bash
+quarto add Erasmus-CTM/pyodide-interaktiv
+```
+
+## Research prototypes
+
+Work in progress that shows where the tools can go next.
+
+| Repository | What it is |
+|---|---|
+| [stack-wasm-maxima](https://github.com/Erasmus-CTM/stack-wasm-maxima) | The computer algebra system Maxima compiled to WebAssembly, so STACK questions can be graded natively in the browser. [Comparison demo](https://erasmus-ctm.github.io/stack-wasm-maxima/) |
+| [ctm_quiz_ltibff](https://github.com/Erasmus-CTM/ctm_quiz_ltibff) | Proof of concept: connecting a browser quiz to Canvas LMS via LTI. |
+| [ctm_ai_eval](https://github.com/Erasmus-CTM/ctm_ai_eval) | Experiments on how to evaluate course chatbots (retrieval and answer quality). |
+
+: {.sm}
+
+## Building blocks
+
+Shared libraries used by the packages above. Course authors do not install them
+separately: [ctm-libs](https://github.com/Erasmus-CTM/ctm-libs) (settings, languages,
+Python runtime, AI feedback) and
+[ctm-checkers](https://github.com/Erasmus-CTM/ctm-checkers) (the Python grading code).
