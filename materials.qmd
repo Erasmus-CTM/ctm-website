@@ -8,10 +8,20 @@ you can copy and adapt them for your own course.
 
 ## Linear Algebra and Numerical Methods
 
-A Quarto book on linear algebra with numerical methods in Python.
+A Quarto book on linear algebra with numerical methods in Python, with a set of projects based on its structure. It comes in an instructor and a student version and is also available as PDF.
 
 [Open the book](https://erasmus-ctm.github.io/linalg-project/){.btn .btn-primary}
 [Source](https://github.com/Erasmus-CTM/linalg-project){.btn .btn-outline-secondary}
+
+## Numerical Methods for Engineers (NTNU)
+
+Course *Matematikk 3A* (in Norwegian) from NTNU, 12 weeks in three blocks: numbers and
+algorithms, numerical linear algebra, optimization. Each week starts from a guiding
+question and uses small examples, figures and Python experiments. The course comes with
+eleven projects, which are also in the [Project Pool](projects/index.qmd), and a set of
+exam problems. Licence: CC BY-SA 4.0.
+
+[Open the course](https://aacchhee.github.io/ingmat3a_ntnu/){.btn .btn-primary}
 
 ## Python Crash Course
 
