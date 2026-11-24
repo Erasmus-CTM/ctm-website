@@ -37,8 +37,8 @@ import urllib.parse
 ORG = "Erasmus-CTM"
 REPO = "thematicProjects"
 BRANCH = "main"
-# Without a "University:" line in the README this value is used. Source: the
-# partners' overview table (WP5 A3): "39 projects from AAU".
+# Without a "University:" line in the README this value is used: the projects
+# in thematicProjects come from AAU.
 DEFAULT_UNIVERSITY = "AAU"
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent

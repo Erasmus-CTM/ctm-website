@@ -1,6 +1,5 @@
 # CTM website (part 1 of 2): the PUBLIC results of the Erasmus+ project.
 # Look: like the existing CTM site at DTU (logo + docked sidebar), see styles.css.
-# Structure and background: see ../CLAUDE.md and ../Notizen/.
 #
 #   quarto preview          # local preview with live reload
 #   quarto render           # -> _site/
@@ -18,6 +17,8 @@ website:
   description: "Open teaching materials, project collections and software from the Erasmus+ project CTM."
   favicon: Theme/ctm-icon.png
   page-navigation: true
+  site-url: https://erasmus-ctm.github.io
+  repo-url: https://github.com/Erasmus-CTM/erasmus-ctm.github.io
   # No navbar: everything is in the docked sidebar, as on the DTU site.
   sidebar:
     style: floating

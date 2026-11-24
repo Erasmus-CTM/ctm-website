@@ -1,4 +1,4 @@
-/* Shared rules of the CTM sites (ctm-website and ctm-report use the same file).
+/* Shared rules of the CTM sites.
    Look modelled on the existing CTM site at DTU (Sphinx Book Theme): logo and
    search on top of a docked sidebar on the left, no top bar, contents on the right.
    Colours are in Theme/ctm-light.scss and Theme/ctm-dark.scss.
