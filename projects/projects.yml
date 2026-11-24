@@ -145,6 +145,18 @@
   authors: ""
   source: "thematicProjects"
   categories: ["Calculus", "Integration"]
+- title: "Solar Panel Output"
+  path: "https://github.com/Erasmus-CTM/thematicProjects/tree/main/Calculus/Integration/SolarPanels"
+  subject: "Calculus"
+  topic: "Integration"
+  workload: "5-10 hours"
+  programme: "Global Business Engineering"
+  prerequisites: "Iterated integrals; polar integration"
+  languages: "Danish"
+  university: "AAU"
+  authors: ""
+  source: "thematicProjects"
+  categories: ["Calculus", "Integration"]
 - title: "Utility Optimization (Cobb-Douglas)"
   path: "https://github.com/Erasmus-CTM/thematicProjects/tree/main/Calculus/LagrangeMultipliers/CobbDouglas"
   subject: "Calculus"

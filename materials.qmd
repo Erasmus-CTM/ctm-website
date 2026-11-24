@@ -3,7 +3,7 @@ title: "Course Materials"
 subtitle: "Open books, courses and tutorials"
 ---
 
-All materials are websites you can read right away. The sources are on GitHub, so
+Most materials are websites you can read right away. The sources are on GitHub, so
 you can copy and adapt them for your own course.
 
 ## Linear Algebra and Numerical Methods
@@ -30,6 +30,21 @@ Norwegian, Danish).
 
 [Open the tutorial](https://erasmus-ctm.github.io/Quarto-Tutorial/en/){.btn .btn-primary}
 [Source](https://github.com/Erasmus-CTM/Quarto-Tutorial){.btn .btn-outline-secondary}
+
+## RUB tutorials
+
+Interactive tutorials from Ruhr-Universität Bochum for first-semester students. Python runs in the
+browser, exercises are checked automatically, and there is optional AI feedback. All are
+available in German and English. For now the complete sources are on GitHub (the
+rendered websites are in the `docs/` folder of each tutorial); standalone websites will follow.
+
+| Tutorial | Content |
+|---|---|
+| [Kurvendiskussion](https://github.com/Erasmus-CTM/thematicProjects/tree/main/RUBTutorials/Kurvendiskussion) (curve sketching) | Domain and range, symmetry and zeros, asymptotes, derivatives, monotonicity, extrema, curvature, drawing graphs |
+| [Matrizen](https://github.com/Erasmus-CTM/thematicProjects/tree/main/RUBTutorials/Matrizen) (matrices and vectors) | Linear algebra with NumPy: vectors, matrix operations, transformations, linear systems, eigenvalues |
+| [Statistik](https://github.com/Erasmus-CTM/thematicProjects/tree/main/RUBTutorials/Statistik) (statistics) | Descriptive statistics, estimation, significance and p-values |
+
+: {.sm}
 
 ## Workshop materials
 
